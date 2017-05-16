@@ -1,0 +1,22 @@
+PODS:
+  - Nimble (5.1.1)
+  - Quick (1.0.0)
+  - StyledText (0.1.0)
+
+DEPENDENCIES:
+  - Nimble (~> 5.1.1)
+  - Quick (~> 1.0.0)
+  - StyledText (from `../`)
+
+EXTERNAL SOURCES:
+  StyledText:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  StyledText: cfe99e5d985305ff5eb934bbb4f5b051ade78523
+
+PODFILE CHECKSUM: df04b9a8effca0aded8049a0f9daf5fdb7899775
+
+COCOAPODS: 1.2.1
