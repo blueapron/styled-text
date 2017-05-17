@@ -1,24 +1,24 @@
 import Foundation
 
-protocol StyledText {
+public protocol StyledText {
     var style: TextStyle { get set }
     var styledAttributedStringValue: NSAttributedString { get }
 }
 
-struct StyledString: StyledText {
-    let string: String
-    var style: TextStyle
+public struct StyledString: StyledText {
+    public let string: String
+    public var style: TextStyle
 
-    var styledAttributedStringValue: NSAttributedString {
+    public var styledAttributedStringValue: NSAttributedString {
         return NSAttributedString(string: string, attributes: style.attributes)
     }
 }
 
-struct StyledAttributedString: StyledText {
-    let attributedString: NSAttributedString
-    var style: TextStyle
+public struct StyledAttributedString: StyledText {
+    public let attributedString: NSAttributedString
+    public var style: TextStyle
 
-    var styledAttributedStringValue: NSAttributedString {
+    public var styledAttributedStringValue: NSAttributedString {
         guard let mutableString = attributedString.mutableCopy() as? NSMutableAttributedString else {
             return attributedString
         }

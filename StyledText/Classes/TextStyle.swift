@@ -1,11 +1,11 @@
 import Foundation
 
-protocol TextStyleDefaultsGenerator {
+public protocol TextStyleDefaultsGenerator {
     static func defaultKern(for font: UIFont) -> CGFloat?
 }
 
-struct TextStyle {
-    static var defaultsGenerator: TextStyleDefaultsGenerator.Type?
+public struct TextStyle {
+    public static var defaultsGenerator: TextStyleDefaultsGenerator.Type?
 
     private static func autosetDefaultsGeneratorIfPossible() {
         guard defaultsGenerator == nil else { return }
@@ -15,23 +15,23 @@ struct TextStyle {
     }
 
     // A default style to only be used in the absence of a specified style
-    static var unspecified = TextStyle(font: .systemFont(ofSize: 11), color: .black)
+    public static var unspecified = TextStyle(font: .systemFont(ofSize: 11), color: .black)
 
-    let font: UIFont
-    let color: UIColor
-    let lineSpacing: CGFloat?
-    let lineHeightMultiple: CGFloat?
-    let kern: CGFloat?
-    let alignment: NSTextAlignment?
-    let lineBreakMode: NSLineBreakMode?
+    public let font: UIFont
+    public let color: UIColor
+    public let lineSpacing: CGFloat?
+    public let lineHeightMultiple: CGFloat?
+    public let kern: CGFloat?
+    public let alignment: NSTextAlignment?
+    public let lineBreakMode: NSLineBreakMode?
 
-    init(font: UIFont,
-         color: UIColor,
-         lineSpacing: CGFloat? = nil,
-         lineHeightMultiple: CGFloat? = nil,
-         kern: CGFloat? = nil,
-         alignment: NSTextAlignment? = nil,
-         lineBreakMode: NSLineBreakMode? = nil) {
+    public init(font: UIFont,
+                color: UIColor,
+                lineSpacing: CGFloat? = nil,
+                lineHeightMultiple: CGFloat? = nil,
+                kern: CGFloat? = nil,
+                alignment: NSTextAlignment? = nil,
+                lineBreakMode: NSLineBreakMode? = nil) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -50,7 +50,7 @@ struct TextStyle {
         self.lineBreakMode = lineBreakMode
     }
 
-    var attributes: [String: Any] {
+    public var attributes: [String: Any] {
         var attributes: [String: Any] = [:]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.setParagraphStyle(.default)
@@ -72,11 +72,10 @@ struct TextStyle {
         return attributes
     }
 
-    func with(size: CGFloat? = nil,
-              color: UIColor? = nil,
-              alignment: NSTextAlignment? = nil,
-              lineBreakMode: NSLineBreakMode? = nil) -> TextStyle {
-
+    public func with(size: CGFloat? = nil,
+                     color: UIColor? = nil,
+                     alignment: NSTextAlignment? = nil,
+                     lineBreakMode: NSLineBreakMode? = nil) -> TextStyle {
         let newFont: UIFont
         if let size = size {
             newFont = font.withSize(size)
@@ -93,7 +92,7 @@ struct TextStyle {
                          lineBreakMode: lineBreakMode ?? self.lineBreakMode)
     }
 
-    func with(font newFont: UIFont) -> TextStyle {
+    public func with(font newFont: UIFont) -> TextStyle {
         return TextStyle(font: newFont,
                          color: color,
                          lineSpacing: lineSpacing,

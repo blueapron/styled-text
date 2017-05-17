@@ -1,18 +1,18 @@
 import UIKit
 
-class StyledLabel: UILabel {
-    var textStyle: TextStyle {
+public class StyledLabel: UILabel {
+    public var textStyle: TextStyle {
         get { return styledText.style }
         set { styledText.style = newValue }
     }
 
-    var styledText: StyledText = StyledString(string: "", style: .unspecified) {
+    public var styledText: StyledText = StyledString(string: "", style: .unspecified) {
         didSet {
             super.attributedText = styledText.styledAttributedStringValue
         }
     }
 
-    override var text: String? {
+    override public var text: String? {
         get {
             return super.attributedText?.string
         }
@@ -26,7 +26,7 @@ class StyledLabel: UILabel {
         }
     }
 
-    override var attributedText: NSAttributedString? {
+    override public var attributedText: NSAttributedString? {
         get {
             return super.attributedText
         }
