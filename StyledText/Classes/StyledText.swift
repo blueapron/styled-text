@@ -9,6 +9,11 @@ public struct StyledString: StyledText {
     public let string: String
     public var style: TextStyle
 
+    public init(string: String, style: TextStyle) {
+        self.string = string
+        self.style = style
+    }
+
     public var styledAttributedStringValue: NSAttributedString {
         return NSAttributedString(string: string, attributes: style.attributes)
     }
@@ -17,6 +22,11 @@ public struct StyledString: StyledText {
 public struct StyledAttributedString: StyledText {
     public let attributedString: NSAttributedString
     public var style: TextStyle
+
+    public init(attributedString: NSAttributedString, style: TextStyle) {
+        self.attributedString = attributedString
+        self.style = style
+    }
 
     public var styledAttributedStringValue: NSAttributedString {
         guard let mutableString = attributedString.mutableCopy() as? NSMutableAttributedString else {

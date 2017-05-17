@@ -1,13 +1,13 @@
 import UIKit
 
-class StyledButton: UIButton {
+open class StyledButton: UIButton {
     // swiftlint:disable opening_brace
-    var normalTextStyle: TextStyle = .unspecified           { didSet { updateStyles() }}
-    var highlightedTextStyle: TextStyle?                    { didSet { updateStyles() }}
-    var disabledTextStyle: TextStyle?                       { didSet { updateStyles() }}
-    var selectedTextStyle: TextStyle?                       { didSet { updateStyles() }}
+    public var normalTextStyle: TextStyle = .unspecified    { didSet { updateStyles() }}
+    public var highlightedTextStyle: TextStyle?             { didSet { updateStyles() }}
+    public var disabledTextStyle: TextStyle?                { didSet { updateStyles() }}
+    public var selectedTextStyle: TextStyle?                { didSet { updateStyles() }}
 
-    var hideTitle = false                                   { didSet { updateStyles() }}
+    open var hideTitle = false                            { didSet { updateStyles() }}
 
     private var normalTitle: String?                        { didSet { updateStyles() }}
     private var highlightedTitle: String?                   { didSet { updateStyles() }}
@@ -39,7 +39,7 @@ class StyledButton: UIButton {
 
     // MARK: - Overrides
 
-    override func title(for state: UIControlState) -> String? {
+    override open func title(for state: UIControlState) -> String? {
         if state.contains(.normal) {
             return normalTitle
         } else if state.contains(.highlighted) {
@@ -54,7 +54,7 @@ class StyledButton: UIButton {
         }
     }
 
-    override func setTitle(_ title: String?, for state: UIControlState) {
+    override open func setTitle(_ title: String?, for state: UIControlState) {
         if state.contains(.normal) {
             normalTitle = title
         } else if state.contains(.highlighted) {
@@ -68,12 +68,12 @@ class StyledButton: UIButton {
         }
     }
 
-    override func titleColor(for state: UIControlState) -> UIColor? {
+    override open func titleColor(for state: UIControlState) -> UIColor? {
         assertionFailure("StyledButton must use TextStyle for title color")
         return nil
     }
 
-    override func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+    override open func setTitleColor(_ color: UIColor?, for state: UIControlState) {
         assertionFailure("StyledButton must use TextStyle for title color")
     }
 }
