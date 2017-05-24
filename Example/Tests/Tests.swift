@@ -2,7 +2,6 @@
 
 import Quick
 import Nimble
-import StyledText
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
