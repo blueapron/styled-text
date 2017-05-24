@@ -12,7 +12,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		B601A0CCCD3669C4A70FC39C /* Pods_StyledText_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */; };
 		D7442EFEBDB03193A8146F68 /* Pods_StyledText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */; };
 		F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */; };
@@ -41,7 +40,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* StyledText_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StyledText_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		71AA86DE61E7B18282765406 /* Pods-StyledText_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Tests/Pods-StyledText_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		77EF9E637B856DB7F9013EB5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +115,6 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -373,7 +370,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
