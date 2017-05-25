@@ -20,6 +20,16 @@ fileprivate extension StyledLabel {
         label.numberOfLines = 0
         return label
     }
+
+    static func testLineBreakLabel() -> StyledLabel {
+        let frame = CGRect(origin: .zero, size: .zero)
+        let label = StyledLabel(frame: frame)
+        label.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        label.numberOfLines = 0
+        label.sizeToFit()
+        label.frame = label.frame.divided(atDistance: 150, from: .minXEdge).slice
+        return label
+    }
 }
 
 fileprivate extension TextStyle {
@@ -82,8 +92,16 @@ class StyledLabelSpec: QuickSpec {
                 expect(label).to(haveValidSnapshot(named: "line-height-multiple-half"))
             }
 
-            it("respects word wrapping") {
-                // TODO 
+            it("respects line break mode") {
+                let label = StyledLabel.testLineBreakLabel()
+                label.textStyle = TextStyle.standard.with(lineBreakMode: .byClipping)
+                expect(label).to(haveValidSnapshot(named: "line-break-clipping"))
+                label.textStyle = TextStyle.standard.with(lineBreakMode: .byTruncatingHead)
+                expect(label).to(haveValidSnapshot(named: "line-break-truncate-head"))
+                label.textStyle = TextStyle.standard.with(lineBreakMode: .byTruncatingTail)
+                expect(label).to(haveValidSnapshot(named: "line-break-truncate-tail"))
+                label.textStyle = TextStyle.standard.with(lineBreakMode: .byWordWrapping)
+                expect(label).to(haveValidSnapshot(named: "line-break-word-wrap"))
             }
         }
     }
