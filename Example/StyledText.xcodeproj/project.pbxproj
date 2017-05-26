@@ -15,6 +15,7 @@
 		B601A0CCCD3669C4A70FC39C /* Pods_StyledText_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */; };
 		D7442EFEBDB03193A8146F68 /* Pods_StyledText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */; };
 		F845F2EE1ED8C6ED007A16BC /* StyledTextViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */; };
+		F845F2F11ED8CB21007A16BC /* StyledButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845F2EF1ED8CB1A007A16BC /* StyledButtonSpec.swift */; };
 		F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		878CA10BCA51C22D09BCDADD /* Pods-StyledText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example/Pods-StyledText_Example.release.xcconfig"; sourceTree = "<group>"; };
 		96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextViewSpec.swift; sourceTree = "<group>"; };
+		F845F2EF1ED8CB1A007A16BC /* StyledButtonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButtonSpec.swift; sourceTree = "<group>"; };
 		F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledLabelSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			children = (
 				F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */,
 				F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */,
+				F845F2EF1ED8CB1A007A16BC /* StyledButtonSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F845F2F11ED8CB21007A16BC /* StyledButtonSpec.swift in Sources */,
 				F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */,
 				F845F2EE1ED8C6ED007A16BC /* StyledTextViewSpec.swift in Sources */,
 			);

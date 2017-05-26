@@ -7,7 +7,7 @@ open class StyledButton: UIButton {
     public var disabledTextStyle: TextStyle?                { didSet { updateStyles() }}
     public var selectedTextStyle: TextStyle?                { didSet { updateStyles() }}
 
-    open var hideTitle = false                            { didSet { updateStyles() }}
+    open var hideTitle = false                              { didSet { updateStyles() }}
 
     private var normalTitle: String?                        { didSet { updateStyles() }}
     private var highlightedTitle: String?                   { didSet { updateStyles() }}
