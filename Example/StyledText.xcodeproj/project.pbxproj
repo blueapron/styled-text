@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B601A0CCCD3669C4A70FC39C /* Pods_StyledText_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */; };
 		D7442EFEBDB03193A8146F68 /* Pods_StyledText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */; };
+		F845F2EE1ED8C6ED007A16BC /* StyledTextViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */; };
 		F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		81EA5C12C172C996E4803052 /* Pods-StyledText_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Tests/Pods-StyledText_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		878CA10BCA51C22D09BCDADD /* Pods-StyledText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example/Pods-StyledText_Example.release.xcconfig"; sourceTree = "<group>"; };
 		96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextViewSpec.swift; sourceTree = "<group>"; };
 		F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledLabelSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */,
+				F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */,
+				F845F2EE1ED8C6ED007A16BC /* StyledTextViewSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
