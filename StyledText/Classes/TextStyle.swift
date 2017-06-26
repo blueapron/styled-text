@@ -74,6 +74,9 @@ public struct TextStyle {
 
     public func with(size: CGFloat? = nil,
                      color: UIColor? = nil,
+                     lineSpacing: CGFloat? = nil,
+                     lineHeightMultiple: CGFloat? = nil,
+                     kern: CGFloat? = nil,
                      alignment: NSTextAlignment? = nil,
                      lineBreakMode: NSLineBreakMode? = nil) -> TextStyle {
         let newFont: UIFont
@@ -85,9 +88,9 @@ public struct TextStyle {
 
         return TextStyle(font: newFont,
                          color: color ?? self.color,
-                         lineSpacing: lineSpacing,
-                         lineHeightMultiple: lineHeightMultiple,
-                         kern: kern,
+                         lineSpacing: lineSpacing ?? self.lineSpacing,
+                         lineHeightMultiple: lineHeightMultiple ?? self.lineHeightMultiple,
+                         kern: kern ?? self.kern,
                          alignment: alignment ?? self.alignment,
                          lineBreakMode: lineBreakMode ?? self.lineBreakMode)
     }
