@@ -43,7 +43,7 @@ pod "StyledText"
 
 Getting started with StyledText is easy, just add a `StyledLabel` to your view and provide it with a `TextStyle`.  After that, it behaves like any other `UILabel`.  Changes to the label's `text` property will always use the set `textStyle`.
 
-```
+``` swift
 class ViewController: UIViewController {
     private let styledLabel: StyledLabel = {
         let label = StyledLabel(frame: .zero)
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 
 A `TextStyle` represents the attributes a styled view should use to draw its text.  Many different text formatting options are supported, including those that previously required interaction with attributed strings or paragraph styles, such as kerning and line spacing.  Creating a `TextStyle` is easy, just specify a font along with any other attributes you want to define.  Any unspecified attributes simply remain as system defaults.
 
-```
+``` swift
 let style = TextStyle(font: .italicSystemFont(ofSize: 72),
                       color: .magenta,
                       lineSpacing: 10,
