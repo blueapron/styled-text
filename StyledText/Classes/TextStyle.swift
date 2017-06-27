@@ -24,6 +24,7 @@ public struct TextStyle {
     public let kern: CGFloat?
     public let alignment: NSTextAlignment?
     public let lineBreakMode: NSLineBreakMode?
+    public let scalesToDynamicTypeFontSize: Bool
 
     public init(font: UIFont,
                 color: UIColor,
@@ -31,7 +32,8 @@ public struct TextStyle {
                 lineHeightMultiple: CGFloat? = nil,
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
-                lineBreakMode: NSLineBreakMode? = nil) {
+                lineBreakMode: NSLineBreakMode? = nil,
+                scalesToDynamicTypeFontSize: Bool = true) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -48,6 +50,8 @@ public struct TextStyle {
 
         self.alignment = alignment
         self.lineBreakMode = lineBreakMode
+
+        self.scalesToDynamicTypeFontSize = scalesToDynamicTypeFontSize
     }
 
     public var attributes: [String: Any] {
@@ -55,7 +59,7 @@ public struct TextStyle {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.setParagraphStyle(.default)
 
-        attributes[NSFontAttributeName] = font
+        attributes[NSFontAttributeName] = scalesToDynamicTypeFontSize ? font.byScalingToDynamicTypeFontSize() : font
         attributes[NSForegroundColorAttributeName] = color
 
         if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
@@ -92,7 +96,8 @@ public struct TextStyle {
                          lineHeightMultiple: lineHeightMultiple ?? self.lineHeightMultiple,
                          kern: kern ?? self.kern,
                          alignment: alignment ?? self.alignment,
-                         lineBreakMode: lineBreakMode ?? self.lineBreakMode)
+                         lineBreakMode: lineBreakMode ?? self.lineBreakMode,
+                         scalesToDynamicTypeFontSize: scalesToDynamicTypeFontSize)
     }
 
     public func with(font newFont: UIFont) -> TextStyle {
@@ -102,6 +107,7 @@ public struct TextStyle {
                          lineHeightMultiple: lineHeightMultiple,
                          kern: kern,
                          alignment: alignment,
-                         lineBreakMode: lineBreakMode)
+                         lineBreakMode: lineBreakMode,
+                         scalesToDynamicTypeFontSize: scalesToDynamicTypeFontSize)
     }
 }
