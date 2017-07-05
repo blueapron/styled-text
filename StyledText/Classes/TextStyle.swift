@@ -33,7 +33,7 @@ public struct TextStyle {
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
                 lineBreakMode: NSLineBreakMode? = nil,
-                scalesToDynamicTypeFontSize: Bool = true) {
+                scalesToDynamicTypeFontSize: Bool = false) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -82,7 +82,8 @@ public struct TextStyle {
                      lineHeightMultiple: CGFloat? = nil,
                      kern: CGFloat? = nil,
                      alignment: NSTextAlignment? = nil,
-                     lineBreakMode: NSLineBreakMode? = nil) -> TextStyle {
+                     lineBreakMode: NSLineBreakMode? = nil,
+                     scalesToDynamicTypeFontSize: Bool? = nil) -> TextStyle {
         let newFont: UIFont
         if let size = size {
             newFont = font.withSize(size)
@@ -97,7 +98,7 @@ public struct TextStyle {
                          kern: kern ?? self.kern,
                          alignment: alignment ?? self.alignment,
                          lineBreakMode: lineBreakMode ?? self.lineBreakMode,
-                         scalesToDynamicTypeFontSize: scalesToDynamicTypeFontSize)
+                         scalesToDynamicTypeFontSize: scalesToDynamicTypeFontSize ?? self.scalesToDynamicTypeFontSize)
     }
 
     public func with(font newFont: UIFont) -> TextStyle {
