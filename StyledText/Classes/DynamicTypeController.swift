@@ -1,17 +1,17 @@
 import UIKit
 
-public protocol TextStyleControllerDelegate: class {
-    func preferredContentSizeCategoryDidUpdate(controller: TextStyleController, newCategory: UIContentSizeCategory)
+public protocol DynamicTypeControllerDelegate: class {
+    func preferredContentSizeCategoryDidUpdate(controller: DynamicTypeController, newCategory: UIContentSizeCategory)
 }
 
-public class TextStyleController {
-    public static let shared = TextStyleController(loadSavedContentSize: true)
+public class DynamicTypeController {
+    public static let shared = DynamicTypeController(loadSavedContentSize: true)
 
     private var contentSizeCategoryObservation: AnyObject?
 
     public init(loadSavedContentSize: Bool = false) {
         if loadSavedContentSize,
-            let string = UserDefaults.standard.string(forKey: TextStyleController.DefaultsKey) {
+            let string = UserDefaults.standard.string(forKey: DynamicTypeController.DefaultsKey) {
             let category = UIContentSizeCategory(rawValue: string)
             overrideContentSizeCategory = category
         }
@@ -74,15 +74,15 @@ public class TextStyleController {
     private static let DefaultsKey = "StyledTextOverrideContentSize"
     public var overrideContentSizeCategory: UIContentSizeCategory? {
         didSet {
-            UserDefaults.standard.set(overrideContentSizeCategory?.rawValue, forKey: TextStyleController.DefaultsKey)
+            UserDefaults.standard.set(overrideContentSizeCategory?.rawValue, forKey: DynamicTypeController.DefaultsKey)
             contentSizeCategoryDidChange()
         }
     }
 
     // MARK: - Content Size Changes
-    private let delegates = WeakArray<TextStyleControllerDelegate>()
+    private let delegates = WeakArray<DynamicTypeControllerDelegate>()
 
-    public func addDelegate(delegate: TextStyleControllerDelegate) {
+    public func addDelegate(delegate: DynamicTypeControllerDelegate) {
         delegates.append(element: delegate)
     }
 

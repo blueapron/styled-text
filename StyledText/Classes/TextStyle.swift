@@ -31,7 +31,7 @@ public struct TextStyle {
     public let alignment: NSTextAlignment?
     public let lineBreakMode: NSLineBreakMode?
     public let dynamicTypeBehavior: DynamicTypeBehavior
-    public let controller: TextStyleController
+    public let dynamicTypeController: DynamicTypeController
 
     public init(font: UIFont,
                 color: UIColor,
@@ -41,7 +41,7 @@ public struct TextStyle {
                 alignment: NSTextAlignment? = nil,
                 lineBreakMode: NSLineBreakMode? = nil,
                 dynamicTypeBehavior: DynamicTypeBehavior = .noScaling,
-                controller: TextStyleController = .shared) {
+                controller: DynamicTypeController = .shared) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -60,7 +60,7 @@ public struct TextStyle {
         self.lineBreakMode = lineBreakMode
 
         self.dynamicTypeBehavior = dynamicTypeBehavior
-        self.controller = controller
+        self.dynamicTypeController = controller
     }
 
     public var attributes: [String: Any] {
@@ -73,9 +73,9 @@ public struct TextStyle {
         case .noScaling:
             scaledFont = font
         case .scaleToStandardSizes:
-            scaledFont = controller.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: false)
+            scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: false)
         case .scaleToAllSizes:
-            scaledFont = controller.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: true)
+            scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: true)
         }
 
         attributes[NSFontAttributeName] = scaledFont
