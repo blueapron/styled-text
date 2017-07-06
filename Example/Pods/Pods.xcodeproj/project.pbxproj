@@ -148,6 +148,7 @@
 		F60D221B548716DF35193FC2CF244676 /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7A4AD39E55980AD6756E73FBCE477D /* BeAKindOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F693D0A9E0D05F815A85DC258E75AF8D /* CurrentTestCaseTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = BE503D79408C000D2C055851C33ACE52 /* CurrentTestCaseTracker.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F87A43711F0D86A20069892E /* TextStyleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A43701F0D86A20069892E /* TextStyleController.swift */; };
+		F8B6D2BC1F0ED0DC00B6DA1F /* WeakArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B6D2BA1F0ED0A700B6DA1F /* WeakArray.swift */; };
 		F9D61EB5EEB799105913685722FF4C9C /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E169877FF59447D4182C1989BF0B59 /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		F9E05A63D447B51E008B89731192FE7F /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E67650E7214DCE853B31771FB5FEF5 /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FAB4ECE0C5039D99BB7173880670871D /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4707081A3F287021C3E570AE00D4C050 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -400,6 +401,7 @@
 		F62481E1600B58F612F67D19918378A8 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
 		F86CA1DF8958576E21577E5F137907B2 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		F87A43701F0D86A20069892E /* TextStyleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStyleController.swift; sourceTree = "<group>"; };
+		F8B6D2BA1F0ED0A700B6DA1F /* WeakArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakArray.swift; sourceTree = "<group>"; };
 		FA68CDEB565662C3E1B336DB7D1493CA /* UIApplication+StrictKeyWindow.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+StrictKeyWindow.m"; path = "FBSnapshotTestCase/Categories/UIApplication+StrictKeyWindow.m"; sourceTree = "<group>"; };
 		FC3F6290B83976335DAD42ABA1099D45 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		FD1F32B8DCF598ED9E3BDF343E4C8A91 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
@@ -625,6 +627,7 @@
 				E86EADD2F716800E5BBC24D7B6F0FC72 /* StyledTextView.swift */,
 				1726E2EE48C91164A7F45E86B411A01B /* TextStyle.swift */,
 				F87A43701F0D86A20069892E /* TextStyleController.swift */,
+				F8B6D2BA1F0ED0A700B6DA1F /* WeakArray.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D237273538AD18E7FD3CE475EAFB69A /* StyledButton.swift in Sources */,
+				F8B6D2BC1F0ED0DC00B6DA1F /* WeakArray.swift in Sources */,
 				10DFA7EB2AAE913E457D97068DED1900 /* StyledLabel.swift in Sources */,
 				AF3B2E33FB239A56DD301BEC98CE857A /* StyledText-dummy.m in Sources */,
 				3034AC75E7CCFEFEA20ED74F1FF065E1 /* StyledText.swift in Sources */,

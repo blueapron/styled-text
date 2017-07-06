@@ -1,11 +1,23 @@
 import UIKit
 
+public protocol TextStyleControllerDelegate: class {
+    func preferredContentSizeCategoryDidUpdate(controller: TextStyleController, newCategory: UIContentSizeCategory)
+}
+
 public class TextStyleController {
-    static let shared = TextStyleController()
+    public static let shared = TextStyleController(loadSavedContentSize: true)
+
+    public init(loadSavedContentSize: Bool = false) {
+        if loadSavedContentSize,
+            let string = UserDefaults.standard.string(forKey: TextStyleController.DefaultsKey) {
+            let category = UIContentSizeCategory(rawValue: string)
+            overrideContentSizeCategory = category
+        }
+    }
 
     // MARK: - Scaling Fonts
-    internal func adjustFontForDynamicSize(font: UIFont, supportAccessibiltySizes: Bool = false) -> UIFont {
-        var contentSize = overrideContentSizeCategory ?? UIApplication.shared.preferredContentSizeCategory
+    public func adjustFontForDynamicSize(font: UIFont, supportAccessibiltySizes: Bool = false) -> UIFont {
+        var contentSize = self.contentSize
         if contentSize.isAccessibilityCategory && supportAccessibiltySizes == false {
             contentSize = .extraExtraExtraLarge
         }
@@ -49,24 +61,31 @@ public class TextStyleController {
     }
 
     // MARK: - Override Content Size
+    public var contentSize: UIContentSizeCategory {
+        return overrideContentSizeCategory ?? UIApplication.shared.preferredContentSizeCategory
+    }
+
     private static let DefaultsKey = "StyledTextOverrideContentSize"
-    var overrideContentSizeCategory: UIContentSizeCategory? = {
-        if let string = UserDefaults.standard.string(forKey: TextStyleController.DefaultsKey) {
-            let category = UIContentSizeCategory(rawValue: string)
-            return category
-        }
-        return nil
-    }() {
+    public var overrideContentSizeCategory: UIContentSizeCategory? {
         didSet {
             UserDefaults.standard.set(overrideContentSizeCategory?.rawValue, forKey: TextStyleController.DefaultsKey)
+            contentSizeCategoryDidChange()
         }
     }
 
-    // MARK: - Content Size Changes 
-    static let ContentSizeDidChangeNotification = "StyledTextContentSizeDidChangeNotification"
+    // MARK: - Content Size Changes
+    private let delegates = WeakArray<TextStyleControllerDelegate>()
+
+    public func addDelegate(delegate: TextStyleControllerDelegate) {
+        delegates.append(element: delegate)
+    }
+
+    private func contentSizeCategoryDidChange() {
+        delegates.forEach { delegate in
+            delegate.preferredContentSizeCategoryDidUpdate(controller: self, newCategory: contentSize)
+        }
+    }
 }
-
-
 
 private extension UIContentSizeCategory {
     // This will need to be modified for iOS 11, which provides this variable in the stock API [RH]
