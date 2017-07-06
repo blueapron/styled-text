@@ -7,11 +7,17 @@ public protocol TextStyleControllerDelegate: class {
 public class TextStyleController {
     public static let shared = TextStyleController(loadSavedContentSize: true)
 
+    private var contentSizeCategoryObservation: AnyObject?
+
     public init(loadSavedContentSize: Bool = false) {
         if loadSavedContentSize,
             let string = UserDefaults.standard.string(forKey: TextStyleController.DefaultsKey) {
             let category = UIContentSizeCategory(rawValue: string)
             overrideContentSizeCategory = category
+        }
+
+        contentSizeCategoryObservation = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil, queue: .main) { [weak self] notification in
+            self?.contentSizeCategoryDidChange()
         }
     }
 
