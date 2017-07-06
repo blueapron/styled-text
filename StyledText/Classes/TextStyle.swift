@@ -31,7 +31,7 @@ public struct TextStyle {
     public let alignment: NSTextAlignment?
     public let lineBreakMode: NSLineBreakMode?
     public let dynamicTypeBehavior: DynamicTypeBehavior
-    public let controller: TextStyleController = .shared
+    public let controller: TextStyleController
 
     public init(font: UIFont,
                 color: UIColor,
@@ -40,7 +40,8 @@ public struct TextStyle {
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
                 lineBreakMode: NSLineBreakMode? = nil,
-                dynamicTypeBehavior: DynamicTypeBehavior = .noScaling) {
+                dynamicTypeBehavior: DynamicTypeBehavior = .noScaling,
+                controller: TextStyleController = .shared) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -59,6 +60,7 @@ public struct TextStyle {
         self.lineBreakMode = lineBreakMode
 
         self.dynamicTypeBehavior = dynamicTypeBehavior
+        self.controller = controller
     }
 
     public var attributes: [String: Any] {
