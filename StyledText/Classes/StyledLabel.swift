@@ -8,7 +8,7 @@ public class StyledLabel: UILabel {
 
     public var styledText: StyledText = StyledString(string: "", style: .unspecified) {
         didSet {
-            super.attributedText = styledText.styledAttributedStringValue
+            refreshStyle()
         }
     }
 
@@ -38,5 +38,9 @@ public class StyledLabel: UILabel {
 
             styledText = StyledAttributedString(attributedString: text, style: textStyle)
         }
+    }
+
+    public func refreshStyle() {
+        super.attributedText = styledText.styledAttributedStringValue
     }
 }

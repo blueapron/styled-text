@@ -8,7 +8,7 @@ open class StyledTextView: UITextView {
 
     public var styledText: StyledText = StyledString(string: "", style: .unspecified) {
         didSet {
-            super.attributedText = styledText.styledAttributedStringValue
+            refreshStyle()
         }
     }
 
@@ -38,5 +38,9 @@ open class StyledTextView: UITextView {
 
             styledText = StyledAttributedString(attributedString: text, style: textStyle)
         }
+    }
+
+    public func refreshStyle() {
+        super.attributedText = styledText.styledAttributedStringValue
     }
 }

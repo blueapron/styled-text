@@ -82,7 +82,7 @@ public class DynamicTypeController {
     // MARK: - Content Size Changes
     private let delegates = WeakArray<DynamicTypeControllerDelegate>()
 
-    public func addDelegate(delegate: DynamicTypeControllerDelegate) {
+    public func addDelegate(_ delegate: DynamicTypeControllerDelegate) {
         delegates.append(element: delegate)
     }
 
