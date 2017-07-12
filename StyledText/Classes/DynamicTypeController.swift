@@ -21,6 +21,12 @@ public class DynamicTypeController {
         }
     }
 
+    deinit {
+        if let observation = contentSizeCategoryObservation {
+            NotificationCenter.default.removeObserver(observation)
+        }
+    }
+
     // MARK: - Scaling Fonts
     public func adjustFontForDynamicSize(font: UIFont, supportAccessibiltySizes: Bool = false) -> UIFont {
         var contentSize = self.contentSize
