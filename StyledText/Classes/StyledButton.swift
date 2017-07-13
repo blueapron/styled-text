@@ -76,4 +76,8 @@ open class StyledButton: UIButton {
     override open func setTitleColor(_ color: UIColor?, for state: UIControlState) {
         assertionFailure("StyledButton must use TextStyle for title color")
     }
+
+    public func refreshStyle() {
+        updateStyles()
+    }
 }

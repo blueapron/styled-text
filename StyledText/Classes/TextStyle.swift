@@ -5,6 +5,12 @@ public protocol TextStyleDefaultsGenerator {
 }
 
 public struct TextStyle {
+    public enum DynamicTypeBehavior {
+        case noScaling
+        case scaleToStandardSizes // excludes huge accessibility sizes
+        case scaleToAllSizes // includes huge accessibility sizes
+    }
+
     public static var defaultsGenerator: TextStyleDefaultsGenerator.Type?
 
     private static func autosetDefaultsGeneratorIfPossible() {
@@ -24,6 +30,8 @@ public struct TextStyle {
     public let kern: CGFloat?
     public let alignment: NSTextAlignment?
     public let lineBreakMode: NSLineBreakMode?
+    public let dynamicTypeBehavior: DynamicTypeBehavior
+    public let dynamicTypeController: DynamicTypeController
 
     public init(font: UIFont,
                 color: UIColor,
@@ -31,7 +39,9 @@ public struct TextStyle {
                 lineHeightMultiple: CGFloat? = nil,
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
-                lineBreakMode: NSLineBreakMode? = nil) {
+                lineBreakMode: NSLineBreakMode? = nil,
+                dynamicTypeBehavior: DynamicTypeBehavior = .noScaling,
+                controller: DynamicTypeController = .shared) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
         self.font = font
@@ -48,6 +58,9 @@ public struct TextStyle {
 
         self.alignment = alignment
         self.lineBreakMode = lineBreakMode
+
+        self.dynamicTypeBehavior = dynamicTypeBehavior
+        self.dynamicTypeController = controller
     }
 
     public var attributes: [String: Any] {
@@ -55,7 +68,17 @@ public struct TextStyle {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.setParagraphStyle(.default)
 
-        attributes[NSFontAttributeName] = font
+        let scaledFont: UIFont
+        switch dynamicTypeBehavior {
+        case .noScaling:
+            scaledFont = font
+        case .scaleToStandardSizes:
+            scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: false)
+        case .scaleToAllSizes:
+            scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: true)
+        }
+
+        attributes[NSFontAttributeName] = scaledFont
         attributes[NSForegroundColorAttributeName] = color
 
         if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
@@ -78,7 +101,8 @@ public struct TextStyle {
                      lineHeightMultiple: CGFloat? = nil,
                      kern: CGFloat? = nil,
                      alignment: NSTextAlignment? = nil,
-                     lineBreakMode: NSLineBreakMode? = nil) -> TextStyle {
+                     lineBreakMode: NSLineBreakMode? = nil,
+                     dynamicTypeBehavior: DynamicTypeBehavior? = nil) -> TextStyle {
         let newFont: UIFont
         if let size = size {
             newFont = font.withSize(size)
@@ -92,7 +116,8 @@ public struct TextStyle {
                          lineHeightMultiple: lineHeightMultiple ?? self.lineHeightMultiple,
                          kern: kern ?? self.kern,
                          alignment: alignment ?? self.alignment,
-                         lineBreakMode: lineBreakMode ?? self.lineBreakMode)
+                         lineBreakMode: lineBreakMode ?? self.lineBreakMode,
+                         dynamicTypeBehavior: dynamicTypeBehavior ?? self.dynamicTypeBehavior)
     }
 
     public func with(font newFont: UIFont) -> TextStyle {
@@ -102,6 +127,7 @@ public struct TextStyle {
                          lineHeightMultiple: lineHeightMultiple,
                          kern: kern,
                          alignment: alignment,
-                         lineBreakMode: lineBreakMode)
+                         lineBreakMode: lineBreakMode,
+                         dynamicTypeBehavior: dynamicTypeBehavior)
     }
 }
