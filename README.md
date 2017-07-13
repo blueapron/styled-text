@@ -71,6 +71,36 @@ let blueStyle = style.with(color: .blue)
 let redStyle = style.with(color: .red)
 ```
 
+## Dynamic Type Support
+
+StyledText supports scaling text content to the system font size, a feature Apple calls [Dynamic Type](https://useyourloaf.com/blog/supporting-dynamic-type/).  To use this feature, set the `dynamicTypeBehavior` property of a `TextStyle` to one of these values:
+
+* `noScaling`: [default] keep the font size constant, even when the system font size changes
+* `scaleToStandardSizes`: scale the font to all standard system font sizes, larger accessibility sizes are capped at the maximum standard size
+* `scaleToAllSizes`: scale the font to all standard and accessiblity font sizes
+
+It's possible for the font size to change while your application is running.  When this occurs, you'll need to call `refreshStyle()` on any styled components that are visible for the size to update.  A good way to listen for this event is by adding a delegate to the shared `DynamicTypeController`:
+
+```swift
+class MyViewController: UIViewController, DynamicTypeControllerDelegate {
+    let label: StyledLabel = {
+        let label = StyledLabel()
+        label.textStyle = TextStyle(font: .boldSystemFont(ofSize: 14), color: .black, dynamicTypeBehavior: .scaleToStandardSizes)
+        return label
+    }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        DynamicTypeController.shared.addDelegate(self)
+    }
+
+    func preferredContentSizeCategoryDidUpdate(controller: DynamicTypeController, newCategory: UIContentSizeCategory){
+        label.refreshStyle()
+    }
+}
+```
+
 ## Styled Components
 
 To enable automatic styling, StyledText uses a number of view subclasses that are simple swap-in replacements for conventional UIKit components.
