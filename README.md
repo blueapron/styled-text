@@ -31,13 +31,14 @@ styledLabel.text = "This is a new string"
 
 # Installation
 
-**TODO: Push this jam to CocoaPods when the repo is public 😎✅**
-
-Add this line to your Podfile:
+1. Add this line to your Podfile:
 
 ```
 pod "StyledText"
 ```
+
+2. Run a `pod install`
+3. You're all set!
 
 # How to Use
 
