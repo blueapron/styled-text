@@ -1,42 +1,15 @@
-#
-# Be sure to run `pod lib lint StyledText.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'StyledText'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of StyledText.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.version          = '1.0.0'
+  s.summary          = 'Declarative text styles and simple Dynamic Type support for iOS'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                        StyledText is a library that simplifies styling dynamic text in iOS applications. Instead of having to use attributed strings every time you need to update text, you can declaratively set a text style on your labels. When the text of the label is updated, the label uses the preset style.
                        DESC
-
-  s.homepage         = 'https://github.com/huebnerob/StyledText'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/blueapron/styled-text'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'huebnerob' => 'huebnerob@gmail.com' }
-  s.source           = { :git => 'https://github.com/huebnerob/StyledText.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.author           = { 'huebnerob' => 'robert.huebner@blueapron.com' }
+  s.source           = { :git => 'https://github.com/blueapron/styled-text.git', :tag => s.version.to_s }
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'StyledText/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'StyledText' => ['StyledText/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
