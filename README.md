@@ -1,6 +1,10 @@
 # StyledText
 StyledText is a library that simplifies styling dynamic text in iOS applications.  Instead of having to use attributed strings every time you need to update text, you can declaratively set a text style on your labels.  When the text of the label is updated, the label uses the preset style.
 
+<p align='center'>
+<img src='https://user-images.githubusercontent.com/4182788/28786080-1f616a70-75e6-11e7-84cc-7740406a365b.png' width=300 align='center'>
+</p>
+
 ## Before
 
 ``` swift
@@ -73,6 +77,10 @@ let redStyle = style.with(color: .red)
 ```
 
 ## Dynamic Type Support
+
+<p align='center'>
+<img src='https://user-images.githubusercontent.com/4182788/28786100-2fd9c528-75e6-11e7-8c5d-935598cf5147.gif' width=300 align='center'>
+</p>
 
 StyledText supports scaling text content to the system font size, a feature Apple calls [Dynamic Type](https://useyourloaf.com/blog/supporting-dynamic-type/).  To use this feature, set the `dynamicTypeBehavior` property of a `TextStyle` to one of these values:
 
