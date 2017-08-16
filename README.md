@@ -76,6 +76,26 @@ let blueStyle = style.with(color: .blue)
 let redStyle = style.with(color: .red)
 ```
 
+## Providing Defaults
+
+You probably have a sensible default value for kerning that works well for your font.  Instead of needing to specify this kern value in each individual `TextStyle` you create, you can use a `TextStyleDefaultsGenerator` to add it automatically.  The simplest way to get started with this is to extend `TextStyle` to conform to the `TextStyleDefaultsGenerator` protocol, the library will detect if you've added this conformance and behave appropriately.
+
+``` swift
+extension TextStyle: TextStyleDefaultsGenerator {
+    static let defaultCeraKern: CGFloat = -0.2
+    static let defaultChronicleKern: CGFloat = -0.2
+
+    static public func defaultKern(for font: UIFont) -> CGFloat? {
+        if font.fontName.contains("Cera") {
+            return defaultCeraKern
+        } else if font.fontName.contains("Chronicle") {
+            return defaultChronicleKern
+        }
+        return nil
+    }
+}
+```
+
 ## Dynamic Type Support
 
 <p align='center'>
