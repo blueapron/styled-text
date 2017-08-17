@@ -82,8 +82,8 @@ You probably have a sensible default value for kerning that works well for your 
 
 ``` swift
 extension TextStyle: TextStyleDefaultsGenerator {
-    static let defaultCeraKern: CGFloat = -0.2
-    static let defaultChronicleKern: CGFloat = -0.2
+    private static let defaultCeraKern: CGFloat = -0.2
+    private static let defaultChronicleKern: CGFloat = -0.2
 
     static public func defaultKern(for font: UIFont) -> CGFloat? {
         if font.fontName.contains("Cera") {
