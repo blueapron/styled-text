@@ -10,5 +10,5 @@ language: swift
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xctool run-tests -workspace Example/StyledText.xcworkspace -scheme StyledText-Example -sdk iphonesimulator10.3 ONLY_ACTIVE_ARCH=NO 
+- set -o pipefail && xctool run-tests -test-sdk iphonesimulator10.3 -workspace Example/StyledText.xcworkspace -scheme StyledText-Example
 - pod lib lint
