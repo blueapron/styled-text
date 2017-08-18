@@ -1,14 +1,11 @@
+
 # references:
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
 osx_image: xcode8.3
 language: swift
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+xcode_sdk: iphonesimulator10.3
 script:
 - set -o pipefail && xctool run-tests -test-sdk iphonesimulator10.3 -workspace Example/StyledText.xcworkspace -scheme StyledText-Example
 - pod lib lint
