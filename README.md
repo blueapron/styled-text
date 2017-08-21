@@ -1,6 +1,8 @@
 # StyledText   [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=599b31b30b95740001249898&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/599b31b30b95740001249898/build/latest?branch=master)
 StyledText is a library that simplifies styling dynamic text in iOS applications.  Instead of having to use attributed strings every time you need to update text, you can declaratively set a text style on your labels.  When the text of the label is updated, the label uses the preset style.
 
+This is an inconsequential change. :)
+
 <p align='center'>
 <img src='https://user-images.githubusercontent.com/4182788/28786080-1f616a70-75e6-11e7-84cc-7740406a365b.png' width=300 align='center'>
 </p>
