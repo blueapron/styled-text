@@ -7,7 +7,7 @@ fileprivate extension StyledLabel {
     static func testLabel() -> StyledLabel {
         let frame = CGRect(origin: .zero, size: .zero)
         let label = StyledLabel(frame: frame)
-        label.text = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()<>?:{}|[];',."
+        label.text = "fail"
         label.numberOfLines = 0
         label.sizeToFit()
         return label
