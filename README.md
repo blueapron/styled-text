@@ -1,4 +1,4 @@
-# StyledText   ![Travis CI Badge](https://travis-ci.org/blueapron/styled-text.svg?branch=master)
+# StyledText   [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=599b31b30b95740001249898&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/599b31b30b95740001249898/build/latest?branch=master)
 StyledText is a library that simplifies styling dynamic text in iOS applications.  Instead of having to use attributed strings every time you need to update text, you can declaratively set a text style on your labels.  When the text of the label is updated, the label uses the preset style.
 
 <p align='center'>
