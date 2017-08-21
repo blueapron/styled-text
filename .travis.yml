@@ -5,7 +5,6 @@
 
 osx_image: xcode8.3
 language: swift
-xcode_sdk: iphonesimulator10.3
 script:
-- set -o pipefail && xctool run-tests -test-sdk iphonesimulator10.3 -workspace Example/StyledText.xcworkspace -scheme StyledText-Example
+- xctool run-tests -test-sdk iphonesimulator -workspace Example/StyledText.xcworkspace -scheme StyledText-Example ONLY_ACTIVE_ARCH=NO
 - pod lib lint
