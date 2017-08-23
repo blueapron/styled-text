@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  StyledText
-//
-//  Created by huebnerob on 05/16/2017.
-//  Copyright (c) 2017 huebnerob. All rights reserved.
-//
-
 import UIKit
 import StyledText
 
