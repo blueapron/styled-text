@@ -33,7 +33,7 @@ public struct StyledAttributedString: StyledText {
             return attributedString
         }
 
-        func enumerator(attributes: [String: Any], range: NSRange, stop: UnsafeMutablePointer<ObjCBool>) {
+        func enumerator(attributes: [NSAttributedStringKey: Any], range: NSRange, stop: UnsafeMutablePointer<ObjCBool>) {
             var attributesToAdd = style.attributes
             // choosing existing string attributes if they exist over our style attributes [RH]
             attributes.forEach { (key, _) in

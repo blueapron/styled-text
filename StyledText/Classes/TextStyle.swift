@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 public protocol TextStyleDefaultsGenerator {
     static func defaultKern(for font: UIFont) -> CGFloat?
@@ -63,8 +64,8 @@ public struct TextStyle {
         self.dynamicTypeController = controller
     }
 
-    public var attributes: [String: Any] {
-        var attributes: [String: Any] = [:]
+    public var attributes: [NSAttributedStringKey: Any] {
+        var attributes: [NSAttributedStringKey: Any] = [:]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.setParagraphStyle(.default)
 
@@ -78,19 +79,19 @@ public struct TextStyle {
             scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: true)
         }
 
-        attributes[NSFontAttributeName] = scaledFont
-        attributes[NSForegroundColorAttributeName] = color
+        attributes[.font] = scaledFont
+        attributes[.foregroundColor] = color
 
         if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
         if let lineHeightMultiple = lineHeightMultiple {
             let adjustedLineHeightMultiple = lineHeightMultiple * (font.pointSize / font.lineHeight)
             paragraphStyle.lineHeightMultiple = adjustedLineHeightMultiple
         }
-        if let kern = kern { attributes[NSKernAttributeName] = kern }
+        if let kern = kern { attributes[.kern] = kern }
         if let alignment = alignment { paragraphStyle.alignment = alignment }
         if let lineBreakMode = lineBreakMode { paragraphStyle.lineBreakMode = lineBreakMode }
 
-        attributes[NSParagraphStyleAttributeName] = paragraphStyle
+        attributes[.paragraphStyle] = paragraphStyle
 
         return attributes
     }
