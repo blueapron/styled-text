@@ -11,7 +11,7 @@ PODS:
     - FBSnapshotTestCase (~> 2.0)
     - Nimble (~> 7.0)
   - Quick (1.2.0)
-  - StyledText (1.0.0)
+  - StyledText (1.1.0)
 
 DEPENDENCIES:
   - FBSnapshotTestCase (~> 2.0)
@@ -29,7 +29,7 @@ SPEC CHECKSUMS:
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  StyledText: 98e993a39e4ee351912033e1a495f1cdc02dfdfa
+  StyledText: fc5a267c2b40454767965e8a615567ce5f2e0672
 
 PODFILE CHECKSUM: 93ee1fefce57920b1899c41d81505138743fcfac
 

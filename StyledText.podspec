@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StyledText'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Declarative text styles and simple Dynamic Type support for iOS'
   s.description      = <<-DESC
                         StyledText is a library that simplifies styling dynamic text in iOS applications. Instead of having to use attributed strings every time you need to update text, you can declaratively set a text style on your labels. When the text of the label is updated, the label uses the preset style.
