@@ -4,33 +4,47 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - Nimble (7.0.2)
-  - Nimble-Snapshots (6.3.0):
-    - Nimble-Snapshots/Core (= 6.3.0)
-  - Nimble-Snapshots/Core (6.3.0):
-    - FBSnapshotTestCase (~> 2.0)
-    - Nimble (~> 7.0)
-  - Quick (1.2.0)
-  - StyledText (1.1.0)
+  - iOSSnapshotTestCase (6.0.3):
+    - iOSSnapshotTestCase/SwiftSupport (= 6.0.3)
+  - iOSSnapshotTestCase/Core (6.0.3)
+  - iOSSnapshotTestCase/SwiftSupport (6.0.3):
+    - iOSSnapshotTestCase/Core
+  - Nimble (8.0.2)
+  - Nimble-Snapshots (7.1.0):
+    - Nimble-Snapshots/Core (= 7.1.0)
+  - Nimble-Snapshots/Core (7.1.0):
+    - iOSSnapshotTestCase (~> 6.0)
+    - Nimble (~> 8.0)
+  - Quick (2.1.0)
+  - StyledText (1.2.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 2.0)
-  - Nimble (= 7.0.2)
-  - Nimble-Snapshots (~> 6.3.0)
-  - Quick (~> 1.2.0)
+  - FBSnapshotTestCase (~> 2.1.4)
+  - Nimble (~> 8.0.2)
+  - Nimble-Snapshots (~> 7.1.0)
+  - Quick (~> 2.1.0)
   - StyledText (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FBSnapshotTestCase
+    - iOSSnapshotTestCase
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
 
 EXTERNAL SOURCES:
   StyledText:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
-  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
-  StyledText: fc5a267c2b40454767965e8a615567ce5f2e0672
+  iOSSnapshotTestCase: 944a73f6d9676302811a86c0cf35f0e6ef5ab2a0
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Nimble-Snapshots: 2ec985281eef0eb9fc69a469deee851363a50d0e
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  StyledText: c2ce5649f8638ce2a323979626d5e02f76274dec
 
-PODFILE CHECKSUM: 93ee1fefce57920b1899c41d81505138743fcfac
+PODFILE CHECKSUM: 453180b7d5063ea8414dcdadac985272e9a346ec
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.1

@@ -63,8 +63,8 @@ public struct TextStyle {
         self.dynamicTypeController = controller
     }
 
-    public var attributes: [NSAttributedStringKey: Any] {
-        var attributes: [NSAttributedStringKey: Any] = [:]
+    public var attributes: [NSAttributedString.Key: Any] {
+        var attributes: [NSAttributedString.Key: Any] = [:]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.setParagraphStyle(.default)
 
@@ -78,19 +78,19 @@ public struct TextStyle {
             scaledFont = dynamicTypeController.adjustFontForDynamicSize(font: font, supportAccessibiltySizes: true)
         }
 
-        attributes[NSAttributedStringKey.font] = scaledFont
-        attributes[NSAttributedStringKey.foregroundColor] = color
+        attributes[NSAttributedString.Key.font] = scaledFont
+        attributes[NSAttributedString.Key.foregroundColor] = color
 
         if let lineSpacing = lineSpacing { paragraphStyle.lineSpacing = lineSpacing }
         if let lineHeightMultiple = lineHeightMultiple {
             let adjustedLineHeightMultiple = lineHeightMultiple * (font.pointSize / font.lineHeight)
             paragraphStyle.lineHeightMultiple = adjustedLineHeightMultiple
         }
-        if let kern = kern { attributes[NSAttributedStringKey.kern] = kern }
+        if let kern = kern { attributes[NSAttributedString.Key.kern] = kern }
         if let alignment = alignment { paragraphStyle.alignment = alignment }
         if let lineBreakMode = lineBreakMode { paragraphStyle.lineBreakMode = lineBreakMode }
 
-        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+        attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
 
         return attributes
     }
