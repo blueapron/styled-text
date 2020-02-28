@@ -11,8 +11,6 @@ public struct TextStyle {
         case scaleToAllSizes // includes huge accessibility sizes
     }
 
-    public static var defaultDynamicTypeBehavior : DynamicTypeBehavior = .noScaling
-    
     public static var defaultsGenerator: TextStyleDefaultsGenerator.Type?
 
     private static func autosetDefaultsGeneratorIfPossible() {
@@ -42,7 +40,6 @@ public struct TextStyle {
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
                 lineBreakMode: NSLineBreakMode? = nil,
-                dynamicTypeBehavior: DynamicTypeBehavior = TextStyle.defaultDynamicTypeBehavior,
                 controller: DynamicTypeController = .shared) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
