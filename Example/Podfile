@@ -1,21 +1,21 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'StyledText_Example' do
   pod 'StyledText', :path => '../'
 
   target 'StyledText_Tests' do
     inherit! :search_paths
-    pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '= 7.0.2'
-    pod 'FBSnapshotTestCase', '~> 2.0'
-    pod 'Nimble-Snapshots', '~> 6.3.0'
+    pod 'Nimble', '~> 8.0.5'
+    pod 'Quick'
+    pod 'FBSnapshotTestCase', '~> 2.1.4'
+    pod 'Nimble-Snapshots', '~> 8.1.1'
   end
 end
 
 # Hack until `swift_version` is added to the podspec https://github.com/CocoaPods/CocoaPods/issues/7134
-swift4 = ['Quick', 'Nimble', 'FBSnapshotTestCase', 'Nimble-Snapshots']
+swift4 = ['FBSnapshotTestCase']
 
 post_install do |installer|
     installer.pods_project.targets.each do |target|
