@@ -40,6 +40,7 @@ public struct TextStyle {
                 kern: CGFloat? = nil,
                 alignment: NSTextAlignment? = nil,
                 lineBreakMode: NSLineBreakMode? = nil,
+                dynamicTypeBehavior: DynamicTypeBehavior = .noScaling,
                 controller: DynamicTypeController = .shared) {
         TextStyle.autosetDefaultsGeneratorIfPossible()
 
