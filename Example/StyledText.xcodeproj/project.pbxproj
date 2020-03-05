@@ -13,7 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		B601A0CCCD3669C4A70FC39C /* Pods_StyledText_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */; };
-		D7442EFEBDB03193A8146F68 /* Pods_StyledText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */; };
+		DE331FA7B859F73A9A53275B /* Pods_StyledText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 031E75943D6D7A0CA6224F03 /* Pods_StyledText_Tests.framework */; };
 		F845F2EE1ED8C6ED007A16BC /* StyledTextViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */; };
 		F845F2F11ED8CB21007A16BC /* StyledButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845F2EF1ED8CB1A007A16BC /* StyledButtonSpec.swift */; };
 		F858EF421ED6151C00C410EA /* StyledLabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */; };
@@ -30,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031E75943D6D7A0CA6224F03 /* Pods_StyledText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		175AACA6B7B8101CBF0D50F6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4C356AE27839126F8A638240 /* Pods-StyledText_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example/Pods-StyledText_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		568E9772F7B718C066166339 /* StyledText.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StyledText.podspec; path = ../StyledText.podspec; sourceTree = "<group>"; };
@@ -47,7 +48,8 @@
 		7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EA5C12C172C996E4803052 /* Pods-StyledText_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Tests/Pods-StyledText_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		878CA10BCA51C22D09BCDADD /* Pods-StyledText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example/Pods-StyledText_Example.release.xcconfig"; sourceTree = "<group>"; };
-		96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StyledText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A961FCF5C6EFA2118B7759 /* Pods-StyledText_Example-StyledText_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example-StyledText_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example-StyledText_Tests/Pods-StyledText_Example-StyledText_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DD4A0E55CC7130E47F0163C2 /* Pods-StyledText_Example-StyledText_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StyledText_Example-StyledText_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StyledText_Example-StyledText_Tests/Pods-StyledText_Example-StyledText_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F845F2EC1ED8C6A2007A16BC /* StyledTextViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledTextViewSpec.swift; sourceTree = "<group>"; };
 		F845F2EF1ED8CB1A007A16BC /* StyledButtonSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButtonSpec.swift; sourceTree = "<group>"; };
 		F858EF411ED6151C00C410EA /* StyledLabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledLabelSpec.swift; sourceTree = "<group>"; };
@@ -66,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7442EFEBDB03193A8146F68 /* Pods_StyledText_Tests.framework in Frameworks */,
+				DE331FA7B859F73A9A53275B /* Pods_StyledText_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +154,8 @@
 				878CA10BCA51C22D09BCDADD /* Pods-StyledText_Example.release.xcconfig */,
 				71AA86DE61E7B18282765406 /* Pods-StyledText_Tests.debug.xcconfig */,
 				81EA5C12C172C996E4803052 /* Pods-StyledText_Tests.release.xcconfig */,
+				DD4A0E55CC7130E47F0163C2 /* Pods-StyledText_Example-StyledText_Tests.debug.xcconfig */,
+				94A961FCF5C6EFA2118B7759 /* Pods-StyledText_Example-StyledText_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -160,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				7AED9B4ECB820E3129AFBC02 /* Pods_StyledText_Example.framework */,
-				96FD6198E5D7ABA6ECE60429 /* Pods_StyledText_Tests.framework */,
+				031E75943D6D7A0CA6224F03 /* Pods_StyledText_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,7 +280,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-StyledText_Tests/Pods-StyledText_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
@@ -284,10 +287,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
