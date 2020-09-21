@@ -30,7 +30,7 @@ internal class WeakArray<Element> {
 
     func forEach(doBlock: (Element) -> Void) {
         // clean up any deallocated items first
-        contents = contents.flatMap { $0.value != nil ? $0 : nil }
+        contents = contents.compactMap { $0.value != nil ? $0 : nil }
 
         for i in contents.startIndex..<contents.endIndex {
             if let value = contents[i].value {

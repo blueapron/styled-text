@@ -7,23 +7,17 @@ target 'StyledText_Example' do
 
   target 'StyledText_Tests' do
     inherit! :search_paths
-    pod 'Nimble', '~> 8.0.5'
+    pod 'Nimble'
     pod 'Quick'
-    pod 'FBSnapshotTestCase', '~> 2.1.4'
-    pod 'Nimble-Snapshots', '~> 8.1.1'
+    pod 'iOSSnapshotTestCase'
+    pod 'Nimble-Snapshots'
   end
 end
 
-# Hack until `swift_version` is added to the podspec https://github.com/CocoaPods/CocoaPods/issues/7134
-swift4 = ['FBSnapshotTestCase']
-
 post_install do |installer|
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''
-            if swift4.include?(target.name)
-                config.build_settings['SWIFT_VERSION'] = swift_version = '4.0'
-            end
-        end
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.0'
     end
+  end
 end

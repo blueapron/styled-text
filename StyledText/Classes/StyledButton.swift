@@ -18,7 +18,7 @@ open class StyledButton: UIButton {
     private func updateStyles() {
         let normalTitle = self.normalTitle ?? ""
 
-        func doUpdate(withText text: String, style: TextStyle, for state: UIControlState) {
+        func doUpdate(withText text: String, style: TextStyle, for state: UIControl.State) {
             let styledText = StyledString(string: text, style: style)
             super.setAttributedTitle(hideTitle ? nil : styledText.styledAttributedStringValue, for: state)
         }
@@ -39,7 +39,7 @@ open class StyledButton: UIButton {
 
     // MARK: - Overrides
 
-    override open func title(for state: UIControlState) -> String? {
+    override open func title(for state: UIControl.State) -> String? {
         if state.contains(.normal) {
             return normalTitle
         } else if state.contains(.highlighted) {
@@ -54,7 +54,7 @@ open class StyledButton: UIButton {
         }
     }
 
-    override open func setTitle(_ title: String?, for state: UIControlState) {
+    override open func setTitle(_ title: String?, for state: UIControl.State) {
         if state.contains(.normal) {
             normalTitle = title
         } else if state.contains(.highlighted) {
@@ -68,12 +68,12 @@ open class StyledButton: UIButton {
         }
     }
 
-    override open func titleColor(for state: UIControlState) -> UIColor? {
+    override open func titleColor(for state: UIControl.State) -> UIColor? {
         assertionFailure("StyledButton must use TextStyle for title color")
         return nil
     }
 
-    override open func setTitleColor(_ color: UIColor?, for state: UIControlState) {
+    override open func setTitleColor(_ color: UIColor?, for state: UIControl.State) {
         assertionFailure("StyledButton must use TextStyle for title color")
     }
 

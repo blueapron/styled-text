@@ -16,7 +16,7 @@ public class DynamicTypeController {
             overrideContentSizeCategory = category
         }
 
-        contentSizeCategoryObservation = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil, queue: .main) { [weak self] notification in
+        contentSizeCategoryObservation = NotificationCenter.default.addObserver(forName: UIContentSizeCategory.didChangeNotification, object: nil, queue: .main) { [weak self] notification in
             self?.contentSizeCategoryDidChange()
         }
     }
