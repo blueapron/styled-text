@@ -26,13 +26,12 @@ DEPENDENCIES:
   - StyledText (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - FBSnapshotTestCase
-    - Quick
   trunk:
+    - FBSnapshotTestCase
     - iOSSnapshotTestCase
     - Nimble
     - Nimble-Snapshots
+    - Quick
 
 EXTERNAL SOURCES:
   StyledText:
@@ -48,4 +47,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3651a54dfc5a4b87eaeda450dfb810881dcebde4
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.0
