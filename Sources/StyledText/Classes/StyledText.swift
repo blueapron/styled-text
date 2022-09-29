@@ -1,4 +1,4 @@
-import Foundation
+#if canImport(UIKit)
 
 public protocol StyledText {
     var style: TextStyle { get set }
@@ -48,3 +48,5 @@ public struct StyledAttributedString: StyledText {
         return mutableString
     }
 }
+
+#endif

@@ -1,4 +1,4 @@
-import Foundation
+#if canImport(UIKit)
 
 public protocol TextStyleDefaultsGenerator {
     static func defaultKern(for font: UIFont) -> CGFloat?
@@ -133,3 +133,5 @@ public struct TextStyle {
                          dynamicTypeBehavior: dynamicTypeBehavior)
     }
 }
+
+#endif

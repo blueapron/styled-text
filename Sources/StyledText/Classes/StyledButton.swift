@@ -1,4 +1,4 @@
-import UIKit
+#if canImport(UIKit)
 
 open class StyledButton: UIButton {
     // swiftlint:disable opening_brace
@@ -81,3 +81,5 @@ open class StyledButton: UIButton {
         updateStyles()
     }
 }
+
+#endif

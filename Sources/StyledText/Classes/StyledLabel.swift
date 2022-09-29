@@ -1,6 +1,6 @@
-import UIKit
+#if canImport(UIKit)
 
-open class StyledTextView: UITextView {
+public class StyledLabel: UILabel {
     public var textStyle: TextStyle {
         get { return styledText.style }
         set { styledText.style = newValue }
@@ -12,7 +12,7 @@ open class StyledTextView: UITextView {
         }
     }
 
-    override open var text: String? {
+    override public var text: String? {
         get {
             return super.attributedText?.string
         }
@@ -26,7 +26,7 @@ open class StyledTextView: UITextView {
         }
     }
 
-    override open var attributedText: NSAttributedString? {
+    override public var attributedText: NSAttributedString? {
         get {
             return super.attributedText
         }
@@ -44,3 +44,5 @@ open class StyledTextView: UITextView {
         super.attributedText = styledText.styledAttributedStringValue
     }
 }
+
+#endif
