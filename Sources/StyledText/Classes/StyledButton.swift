@@ -1,5 +1,7 @@
 #if canImport(UIKit)
 
+import UIKit
+
 open class StyledButton: UIButton {
     // swiftlint:disable opening_brace
     public var normalTextStyle: TextStyle = .unspecified    { didSet { updateStyles() }}

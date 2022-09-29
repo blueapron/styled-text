@@ -1,5 +1,7 @@
 #if canImport(UIKit)
 
+import UIKit
+
 public protocol TextStyleDefaultsGenerator {
     static func defaultKern(for font: UIFont) -> CGFloat?
 }

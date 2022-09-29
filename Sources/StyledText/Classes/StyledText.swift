@@ -1,5 +1,7 @@
 #if canImport(UIKit)
 
+import Foundation
+
 public protocol StyledText {
     var style: TextStyle { get set }
     var styledAttributedStringValue: NSAttributedString { get }

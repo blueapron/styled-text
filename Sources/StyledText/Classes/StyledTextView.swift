@@ -1,5 +1,7 @@
 #if canImport(UIKit)
 
+import UIKit
+
 open class StyledTextView: UITextView {
     public var textStyle: TextStyle {
         get { return styledText.style }

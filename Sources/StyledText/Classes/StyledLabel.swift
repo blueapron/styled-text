@@ -1,5 +1,7 @@
 #if canImport(UIKit)
 
+import UIKit
+
 public class StyledLabel: UILabel {
     public var textStyle: TextStyle {
         get { return styledText.style }
