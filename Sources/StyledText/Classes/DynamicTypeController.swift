@@ -1,6 +1,8 @@
+#if canImport(UIKit)
+
 import UIKit
 
-public protocol DynamicTypeControllerDelegate: class {
+public protocol DynamicTypeControllerDelegate: AnyObject {
     func preferredContentSizeCategoryDidUpdate(controller: DynamicTypeController, newCategory: UIContentSizeCategory)
 }
 
@@ -114,3 +116,5 @@ private extension UIContentSizeCategory {
         }
     }
 }
+
+#endif

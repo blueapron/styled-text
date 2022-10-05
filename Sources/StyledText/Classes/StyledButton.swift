@@ -1,3 +1,5 @@
+#if canImport(UIKit)
+
 import UIKit
 
 open class StyledButton: UIButton {
@@ -81,3 +83,5 @@ open class StyledButton: UIButton {
         updateStyles()
     }
 }
+
+#endif
